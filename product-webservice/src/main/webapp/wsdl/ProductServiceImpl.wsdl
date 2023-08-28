@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://prodsvc.training.com" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://prodsvc.training.com" xmlns:intf="http://prodsvc.training.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://prodsvc.training.com" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="addProduct">
+    <complexType>
+     <sequence>
+      <element name="prod" type="impl:Product"/>
+     </sequence>
+    </complexType>
+   </element>
+   <complexType name="Product">
+    <sequence>
+     <element name="prodId" nillable="true" type="xsd:string"/>
+     <element name="product" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <element name="addProductResponse">
+    <complexType/>
+   </element>
+   <element name="updateProduct">
+    <complexType>
+     <sequence>
+      <element name="prod" type="impl:Product"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="updateProductResponse">
+    <complexType/>
+   </element>
+   <element name="deleteProduct">
+    <complexType>
+     <sequence>
+      <element name="prod" type="impl:Product"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="deleteProductResponse">
+    <complexType/>
+   </element>
+   <element name="getProdInfo">
+    <complexType/>
+   </element>
+   <element name="getProdInfoResponse">
+    <complexType>
+     <sequence>
+      <element name="getProdInfoReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="addProductResponse">
+
+      <wsdl:part element="impl:addProductResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="addProductRequest">
+
+      <wsdl:part element="impl:addProduct" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getProdInfoRequest">
+
+      <wsdl:part element="impl:getProdInfo" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="updateProductRequest">
+
+      <wsdl:part element="impl:updateProduct" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getProdInfoResponse">
+
+      <wsdl:part element="impl:getProdInfoResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="updateProductResponse">
+
+      <wsdl:part element="impl:updateProductResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="deleteProductRequest">
+
+      <wsdl:part element="impl:deleteProduct" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="deleteProductResponse">
+
+      <wsdl:part element="impl:deleteProductResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="ProductServiceImpl">
+
+      <wsdl:operation name="addProduct">
+
+         <wsdl:input message="impl:addProductRequest" name="addProductRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:addProductResponse" name="addProductResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="updateProduct">
+
+         <wsdl:input message="impl:updateProductRequest" name="updateProductRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:updateProductResponse" name="updateProductResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="deleteProduct">
+
+         <wsdl:input message="impl:deleteProductRequest" name="deleteProductRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:deleteProductResponse" name="deleteProductResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getProdInfo">
+
+         <wsdl:input message="impl:getProdInfoRequest" name="getProdInfoRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getProdInfoResponse" name="getProdInfoResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="ProductServiceImplSoapBinding" type="impl:ProductServiceImpl">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="addProduct">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="addProductRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="addProductResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="updateProduct">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="updateProductRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="updateProductResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="deleteProduct">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="deleteProductRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="deleteProductResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getProdInfo">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getProdInfoRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getProdInfoResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="ProductServiceImplService">
+
+      <wsdl:port binding="impl:ProductServiceImplSoapBinding" name="ProductServiceImpl">
+
+         <wsdlsoap:address location="http://localhost:8081/product-webservice/services/ProductServiceImpl"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>
